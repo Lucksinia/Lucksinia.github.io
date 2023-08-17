@@ -1,10 +1,10 @@
-@import url(https://fonts.bunny.net/css?family=abeezee:400);
+@import url(https://fonts.bunny.net/css?family=fira-code:500);
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Fira Code', monospace;
 }
 
 body {
@@ -31,7 +31,7 @@ ul li {
 }
 
 ul li:hover {
-    background: #33a3ee;
+    background: #4f396f;
     transform: translateX(-50px);
 }
 
@@ -49,7 +49,7 @@ ul li::before {
 }
 
 ul li:hover::before {
-    background: #1f5378;
+    background: #4a4059;
 }
 
 ul li::after {
@@ -71,7 +71,7 @@ ul li:hover::after {
 
 ul li a {
     text-decoration: none;
-    color: #999;
+    color: #da8750;
     display: block;
     text-transform: uppercase;
     letter-spacing: 0.05em;
