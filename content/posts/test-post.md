@@ -5,13 +5,13 @@ date: 2023-12-04T1:38:00+08:00
 
 # My first Post #
 
--*- markdown-extras: code-friendly, footnotes, metadata, nofollow, strike, tag-friendly, spoiler -*-
+-*- markdown-extras: code-friendly, footnotes, metadata, nofollow, strike, tag-friendly, spoiler, fenced-code-blocks, codehilite -*-
 
 This is my first **test** *writing* for a ~~blog~~.
 
 ## Testing code ##
 
-```py3
+```python
 import markdown2
 html = markdown2.markdown(test_post, extras["use-file-vars"])
 ```
@@ -24,7 +24,7 @@ html = markdown2.markdown(test_post, extras["use-file-vars"])
 ## Testing spoiler and blockquote ##
 
 >! This should be under a spoiler. And I add more text here, to hopefully add another line to it.
-This is just some text to breakup the blockquotes.
+
 > This should be a blockquote.
 > It should span two lines of text.
 
