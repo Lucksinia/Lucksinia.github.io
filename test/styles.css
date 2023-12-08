@@ -1,0 +1,120 @@
+@import url(https://fonts.bunny.net/css?family=fira-code:500);
+
+:root{
+    /* color variables */
+    --text-color: #bbb19e;
+    --bg-color: #3e3b38;
+    --hower-color: #2e3030;
+    --acsent-color: #da9c50;
+    --focus-acsent: #90b97d;
+
+}
+
+
+* {
+    margin: 0 auto;
+    padding: 0 auto;
+    box-sizing: content-box;
+    font-family: 'Fira Code', monospace;
+}
+/* heading */
+h1 {
+    display: block;
+    font-size: 2rem;
+    margin-top: 0.67rem;
+    margin-bottom: 0.67rem;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    color: var(--acsent-color);
+}
+h1 p{
+    text-align: end;
+}
+
+h2{
+    display:block;
+    font-size: 1.5rem;
+    margin-top: 0.83rem;
+    margin-bottom: 0.83rem;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    color: var(--acsent-color);
+}
+
+h3 {
+    display: block;
+    font-size: 1.17rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    color: var(--acsent-color);
+}
+/* links */
+a{
+    color: var(--acsent-color);
+    text-decoration: none;
+}
+a:hover{
+    color: var(--focus-acsent);
+}
+/* text */
+body {
+    display: block;
+    max-width: 40rem;
+    /* justify-content: center; */
+    align-items: normal;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+p {
+    max-width: auto;
+    text-align: start;
+}
+
+/* blockquotes */
+blockquote {
+    background: var(--hower-color);
+    border-left: 10px solid var(--text-color);
+    margin: 1.1em 10px;
+    padding: 0.5em 10px;
+  }
+blockquote p {
+    display: inline;
+  }
+blockquote.spoiler {
+    color: transparent;
+    border-left: 10px solid var(--text-color);
+    text-shadow: 0 0 20px var(--text-color);
+    border:none ;
+    transition: 0.1s all;
+}
+blockquote.spoiler:hover{
+    color: var(--text-color);
+    text-shadow: none
+}
+
+code {
+    max-width: 89rch;
+    color: var(--focus-acsent);
+    background-color: var(--hower-color);
+    padding: 2px;
+    border-radius: 0.2rem;
+    font-size: 1.05rem
+}
+
+img { 	
+    display: block; 
+    max-width: 100%;
+    height: fit-content;
+    image-orientation: from-image;
+} 
+img em {
+    text-align: center;
+    align-items: unset;
+    font-style: italic;
+}

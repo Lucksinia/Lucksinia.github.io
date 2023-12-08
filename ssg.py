@@ -17,8 +17,8 @@ def app():
     cfg_str = pathlib.Path().cwd() / "config.toml"
     print(cfg_str)
     # config = load_config(cfg_str)
-    content = load_content()
-    templates = load_templates()
+    # content = load_content()
+    # templates = load_templates()
 
     # render(config, content, templates)
 
