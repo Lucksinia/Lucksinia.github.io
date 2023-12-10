@@ -5,7 +5,7 @@ date: 2023-12-04T1:38:00+08:00
 
 # My first Post #
 
--*- markdown-extras: code-friendly, footnotes, metadata, nofollow, strike, tag-friendly, spoiler, fenced-code-blocks, codehilite -*-
+-*- markdown-extras: code-friendly, footnotes, metadata, nofollow, strike, tag-friendly, spoiler, fenced-code-blocks, codehilite, tg-spoiler -*-
 
 This is my first **test** *writing* for a ~~blog~~.
 
@@ -21,6 +21,9 @@ html = markdown2.markdown(test_post, extras["use-file-vars"])
 ![code above, but as a transparent image](/static/img/code-snippet-1.png)
 *And this should be image caption*
 
+![just some png](/static/img/Smile2023.png)
+*and this is a different one*
+
 ## Testing spoiler and blockquote ##
 
 >! This should be under a spoiler. And I add more text here, to hopefully add another line to it.
@@ -30,7 +33,7 @@ html = markdown2.markdown(test_post, extras["use-file-vars"])
 
 ## Testing text and links ##
 
-and this is some text[^1]
+and this is some text[^1] and then some more text with a ||Telegram spoiler||
 
 Lorem, ipsum dolor sit amet
 consectetur adipisicing elit. Autem tempora officia, sunt quas deserunt enim perspiciatis quam neque, provident
@@ -55,8 +58,6 @@ Odit accusantium fugit error nam quis ipsum ipsa nihil. Aliquid voluptas alias q
 maiores, voluptate suscipit accusantium nemo quis ut reprehenderit culpa assumenda odit perferendis aspernatur.
 Rem delectus doloribus voluptate impedit maiores assumenda nostrum totam neque molestias similique eaque, sit
 possimus repellendus recusandae maxime, aperiam ad quia, voluptatibus dolore ut non. Quaerat hic voluptatem
-similique voluptatibus
+similique voluptatibus and here is [nofollow](https://en.wikipedia.org/wiki/Nofollow) link
 
 [^1]: with a footnote!
-
-and here is [nofollow](https://en.wikipedia.org/wiki/Nofollow) link

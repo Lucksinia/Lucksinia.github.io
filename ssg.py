@@ -1,12 +1,16 @@
 import jinja2, markdown2, tomllib, re, pathlib
 
 
-def load_config(cfg_str):
-    return tomllib.loads(cfg_str)
+def load_config(cfg_file):
+    with open(cfg_file, "rb") as configf:
+        return tomllib.load(configf)
 
 
-def load_content():
-    pass
+def load_content(content_dir):
+    items = []
+    path = pathlib.Path.cwd()
+    for file in path.glob(f"{content_dir}/*.md"):
+        print(file)
 
 
 def load_templates():
@@ -14,10 +18,8 @@ def load_templates():
 
 
 def app():
-    cfg_str = pathlib.Path().cwd() / "config.toml"
-    print(cfg_str)
-    # config = load_config(cfg_str)
-    # content = load_content()
+    config = load_config("config.toml")
+    content = load_content("content/posts")
     # templates = load_templates()
 
     # render(config, content, templates)
