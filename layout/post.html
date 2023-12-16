@@ -4,10 +4,12 @@
 {{ macros.head(this.title) }}
 
 <body>
-    <h1>{{ this.title }}</h1>
-    <p>From {{this.date}}</p>
-    {{this.content}}
-    <p><a href="{{config.base_url}}">Return to the Homepage &bigtriangleup;</a></p>
+    <main>
+        <h1>{{ this.title }}</h1>
+        <p>From {{this.date}}</p>
+        {{this.content}}
+        <p><a href="{{config.base_url}}">Return to the Homepage &bigtriangleup;</a></p>
+    </main>
 </body>
 
 </html>

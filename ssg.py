@@ -1,5 +1,6 @@
-import jinja2, markdown2, tomllib, re, pathlib, pprint
+import jinja2, markdown2, tomllib, re, pprint
 from datetime import datetime
+from pathlib import Path
 import shutil
 
 pp = pprint.PrettyPrinter(depth=2)
@@ -14,13 +15,15 @@ def load_content(content_dir):
     # list of posts
     posts = []
     item = {}
-    path = pathlib.Path.cwd()
+    path = Path.cwd()
     for file in path.glob(f"{content_dir}/*.md"):
         content = markdown2.markdown(
             str(file.open().read()),
             use_file_vars=True,
         )
-        content.metadata["date"] = datetime.fromisoformat(content.metadata["date"])
+        content.metadata["date"] = datetime.fromisoformat(
+            content.metadata["date"]
+        ).date()
 
         content.metadata["slug"] = file.name.removesuffix(".md")
         content.metadata[
@@ -41,12 +44,18 @@ def load_templates(template_path):
 
 
 def create_render(config, content, env, output_dir):
-    out_p = pathlib.Path(output_dir)
+    out_p = Path(output_dir)
     if out_p.exists():
         shutil.rmtree(output_dir)
     out_p.mkdir()
+    cname = out_p / "CNAME"
+    cname.touch()
+    cname.write_text("lucksiniais.online")
 
     # index page for posts
+    index_path = out_p / "index.html"
+    index_template = env.get_template("index.html")
+    index_path.write_text(index_template.render(config=config, content=content))
 
 
 def app():
