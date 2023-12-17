@@ -12,8 +12,9 @@
 
 
 * {
+    width: auto;
     margin: 0 auto;
-    padding: 0 auto;
+    padding: auto;
     box-sizing: content-box;
     font-family: 'Fira Code', monospace;
 }
@@ -54,6 +55,15 @@ h3 {
     color: var(--acsent-color);
 }
 /* links */
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+ul li:hover{
+    border-left: 5px solid var(--focus-acsent);
+    font-style: italic;
+    transition: 0.1s all;
+}
 a{
     color: var(--acsent-color);
     text-decoration: none;
@@ -132,8 +142,8 @@ code {
 
 img { 	
     display: block; 
-    max-width: 100%;
-    height: fit-content;
+    width: 100%;
+    height: auto; /*fit-content ?*/
     image-orientation: from-image;
 } 
 img em {

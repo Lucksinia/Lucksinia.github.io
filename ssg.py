@@ -11,7 +11,16 @@ def load_config(cfg_file):
         return tomllib.load(configf)
 
 
-def load_content(content_dir):
+def load_content(content_dir: str):
+    """Parse markdown with markdown2 capabilities in a content directory.
+    as it uses "use-file-vars", don't forget to use markdown variables
+    from within your file.
+
+    :param str content_dir: Pathlike string pointing to the content
+    directory
+    :return dict: dictionary with [slug], [date], [posts] as html and
+    [title]
+    """
     # list of posts
     posts = []
     item = {}
@@ -28,7 +37,7 @@ def load_content(content_dir):
         content.metadata["slug"] = file.name.removesuffix(".md")
         content.metadata[
             "url"
-        ] = f"/{content.metadata['date'].year}/{content.metadata['slug']}"
+        ] = f"/{content.metadata['date'].year}/{content.metadata['slug']}/"
         # adding diferent dict because markdown2 is funky as hell and not allows posts into list
         # praised be standart dict impl as Ordered.
         item = content.metadata
@@ -56,6 +65,18 @@ def create_render(config, content, env, output_dir):
     index_path = out_p / "index.html"
     index_template = env.get_template("index.html")
     index_path.write_text(index_template.render(config=config, content=content))
+
+    # post pages loading
+    post_template = env.get_template("post.html")
+    for item in content["posts"]:
+        post_url_str = output_dir + item["url"]
+        post_url = Path(post_url_str)
+        post_url.mkdir(parents=True, exist_ok=True)
+        post_file = post_url / "index.html"
+        post_file.touch()
+        post_file.write_text(post_template.render(this=item, config=config))
+
+    shutil.copytree("static", "public/static")
 
 
 def app():

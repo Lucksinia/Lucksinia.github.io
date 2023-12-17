@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-{% import "macros.html" as marcros %}
+{% import "macros.html" as macros %}
 {{ macros.head(this.title) }}
 
 <body>
     <main>
         <h1>{{ this.title }}</h1>
         <p>From {{this.date}}</p>
-        {{this.content}}
+        {{this.post}}
         <p><a href="{{config.base_url}}">Return to the Homepage &bigtriangleup;</a></p>
     </main>
 </body>
